@@ -1,88 +1,44 @@
-# Customer Churn Analysis (Telecom)
+# Customer Churn Risk Modelling & Retention Analytics
 
-## Project Overview
-This project analyzes customer churn data for a telecom-style subscription business.  
-The objective was to identify churn drivers, quantify risk across customer segments, and provide data-driven retention recommendations.
+## Overview
+Most businesses only notice when customers have already left. 
+This project was built to change that. Using a dataset of 1,000+ 
+customer records, I developed a system that identifies which customers 
+are at risk of churning before they actually do, so the business can 
+intervene early and protect its revenue.
 
-The project demonstrates end-to-end analytics skills using Python, SQL, and Power BI.
+## The Approach
+I started by cleaning and preparing the data in Python, removing 
+duplicates, handling null values, and standardising formats. From 
+there I engineered new features from the raw data, grouping customers 
+by tenure, flagging high risk contract types, and identifying spend 
+patterns associated with churn behaviour.
 
----
+Rather than building a black box machine learning model, I developed 
+a transparent rule-based risk scoring framework. Every customer receives 
+a score based on their behaviour and that score places them into a low, 
+medium, or high risk category. This approach makes the output easy for 
+business stakeholders to understand and act on.
+
+I then segmented customers by their risk level and spend value to help 
+the business prioritise its retention efforts. High risk, high value 
+customers get personal outreach. High risk, low value customers get 
+automated campaigns. Low risk customers get loyalty rewards.
+
+The final output is an executive Power BI dashboard showing overall 
+churn rate, revenue at risk, churn drivers by segment, and targeted 
+retention recommendations.
 
 ## Tools Used
-- Python (Pandas, NumPy, Scikit-learn) – Data cleaning and exploratory analysis
-- SQLite – SQL-based churn analysis
-- Power BI – Interactive churn dashboard
+Python, Pandas, NumPy, SQL, Power BI, DAX
+
+## Key Insight
+Month-to-month contract customers are disproportionately high risk 
+regardless of how much they spend. Contract type is the strongest 
+single predictor of churn, which means incentivising customers to 
+move to longer contracts early is the most effective retention strategy.
 
 ---
+Built by Pearl Mlotshwa
+github.com/pearl-mlotshwa
 
-## Dataset
-Customer dataset containing:
-- Customer demographics
-- Contract type
-- Tenure
-- Payment methods
-- Internet services
-- Monthly and total charges
-- Churn status
-
----
-
-## Key Analysis (SQL)
-- Overall churn rate
-- Churn by contract type
-- Churn by tenure bands
-- Churn by payment method
-- Churn by internet service
-
----
-
-## Power BI Dashboard Features
-- Total Customers KPI
-- Churn Rate KPI
-- Churn by Contract Type
-- Churn by Tenure Band
-- Interactive slicers:
-  - Contract
-  - Internet Service
-  - Payment Method
-
----
-
-## Key Insights
-- Overall churn rate is **26.54%**, indicating significant customer attrition.
-- Month-to-month customers exhibit extremely high churn (**42.7%**) compared to one-year (**11.3%**) and two-year (**2.8%**) contracts.
-- New customers are most vulnerable, with **56% churn in the first 3 months**.
-- Customers using **electronic check payment** have the highest churn (**45.3%**), while automatic payments show much lower churn.
-
----
-
-## Recommendations
-- Encourage month-to-month customers to migrate to longer-term contracts.
-- Implement early onboarding and retention programs within the first 90 days.
-- Incentivize customers to switch from electronic checks to automatic payment methods.
-- Target high-risk segments with personalized retention offers.
-
----
-
-## Project Structure
-- `data/` – Cleaned dataset  
-- `notebooks/` – Python EDA notebook  
-- `sql/` – SQL analysis queries  
-- `powerbi/` – Power BI dashboard  
-- `visuals/` – Dashboard screenshots  
-
----
-
-## Outcome
-This project demonstrates:
-- Data cleaning and preparation in Python
-- SQL-based business analysis
-- Feature engineering
-- Dashboard design in Power BI
-- Translating data into actionable business insights
-
----
-
-## Author
-Pearl Mlotshwa  
-Aspiring Data Analyst
